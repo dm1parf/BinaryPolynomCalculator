@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<title>Dice</title>
+				
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<header>
+			<h1>Dice</h1>
+		</header>
+		<div class="scoreboard">
+			<p id="score-header">Score</p>
+			<span id="player-score">0</span>:<span id="computer-score">0</span>
+			<div class="badge" id="player-label">Player</div>
+			<div class="badge" id="computer-label">Computer</div>
+		</div>
+
+		<div class="result-message" id="result-message">
+			You win
+		</div>
+		<div class="game">
+			<div class="game-results">
+				<div class="game-result" id="roll-button">
+					Roll Dices
+				</div>
+				<div class="game-result" id="player-game-result">
+					<div class="game-result-label">
+						Your score
+					</div>
+					<div class="game-result-score" id="player-result">
+						<div class="dice-image" id="player-dice-img1">
+						</div>
+						<div class="dice-image" id="player-dice-img2">
+						</div>
+					</div>
+				</div>
+				<div class="game-result" id="computer-game-result">
+					<div class="game-result-label">
+						Computer score
+					</div>
+					<div class="game-result-score" id="computer-result">
+						<div class="dice-image" id="computer-dice-img1">
+						</div>
+						<div class="dice-image" id="computer-dice-img2">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<script src = "app.js" type = "text/javascript"></script>
+	</body>
+</html>
