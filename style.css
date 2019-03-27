@@ -1,0 +1,62 @@
+header{
+	background: white;
+	
+	text-align: center;
+	font-size: 20px;
+	opacity: 0.8;
+	border-radius: 25px;
+}
+h1{
+	
+	color: black;
+	opacity: 2;
+}
+.inputfield{
+	width: 50%;
+	margin: 5px 0px 0px;
+	border: 5px solid white;
+	border-radius: 15px;
+	
+}
+.inputfield:focus{
+	outline: 0px;
+}
+
+body{
+	background: rgb(19,36,117);
+	background: linear-gradient(90deg, rgba(19,36,117,1) 0%, rgba(52,151,182,1) 28%, rgba(54,63,190,0.9948354341736695) 100%);
+	color:white;
+	font-size: 30px;
+}
+
+button{
+	width: 35px;
+	height: 35px;
+	font-size: 25px;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 13px;
+	background: #AED9FF;
+}
+
+button:focus{
+	outline: 0px;
+}
+.polynoms{
+	height: 80px;
+}
+
+#cycl{
+	width: 70px;
+}
+/*
+#outputPolynom{
+	padding: 0px;
+}
+#secondinput{
+	margin: 0px;
+}
+#output{
+	margin: 0px;
+}
+*/
