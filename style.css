@@ -49,6 +49,9 @@ button:focus{
 #cycl{
 	width: 70px;
 }
+.input-label{
+	font-size: 20px;
+}
 /*
 #outputPolynom{
 	padding: 0px;
