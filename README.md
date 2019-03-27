@@ -1,10 +1,3 @@
-# DiceGame
-My first HTML, CSS, JS project
+# Polynom Calculator
+Binary Polynom calculator(JS)
 
-I learned basics of:
-
-- HTML
-- CSS
-- JavaScript
-
-Fully works but still need cleaning after the work process
