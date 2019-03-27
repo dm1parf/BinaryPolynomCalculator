@@ -75,6 +75,10 @@ function binArrayMult(arr1, arr2){
 
 function showPolynom(array, field){
 	field.innerHTML = "";
+	console.log(array.length);
+	if (array.length == 1){
+		field.innerHTML += "0";
+	}
 	for (var i = array.length-1; i > 0; i--){
 		
 		if (array[i] == 1){
@@ -89,8 +93,7 @@ function showPolynom(array, field){
 		}
 		field.innerHTML += "1";
 	}
-	if (array.length == 0)
-		field.innerHTML = "0";
+	
 }
 
 function binArraySum(arr1, arr2){
@@ -143,11 +146,8 @@ function createSinglePolynom(degree){
 }
 
 function cutArray(arr){
-	while (arr[arr.length-1] == 0)
+	while (arr[arr.length-1] == 0 && (arr.length > 1)){
 		arr.pop();
-	if (arr.length == 0){
-		arr.length = 1;
-		arr[0] = 0;
 	}
 		
 	return arr;
