@@ -49,6 +49,7 @@ function calc(choice){
 	out_field.value = result.join("");
 	
 	iter = makeHistory (first, second, result, sign_div.innerHTML, iter);
+	document.getElementById(("history" + (iter -1))).scrollIntoView({behavior: "smooth"});
 }
 
 function getArray(field){
@@ -163,10 +164,12 @@ function cutArray(arr){
 function clear(){
 	poly1_field.innerHTML = " ";
 	poly2_field.innerHTML = " ";
+	sign_div.innerHTML = " ";
 	outPoly_field.innerHTML = " ";
 	input1_field.value = "";
 	input2_field.value = "";
 	out_field.value = "";
+
 }
 
 function swapInputs(){

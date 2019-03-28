@@ -71,6 +71,9 @@ body {
 	font-family: "Arial", "sans-serif";
 }
 
+#firstpolynom{
+	padding: 1000px 0px 0px 0px;
+}
 button:focus{
 	outline: 0px;
 }
@@ -87,13 +90,12 @@ button:focus{
 #sign{
 	padding:0px;
 }
+
 /*
 #outputPolynom{
 	padding: 0px;
 }
-#secondinput{
-	margin: 0px;
-}
+
 #output{
 	margin: 0px;
 }
