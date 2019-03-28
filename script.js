@@ -13,7 +13,7 @@ const clear_button = document.getElementById("clear");
 const sign_div = document.getElementById("sign");
 const history_div = document.getElementById("history");
 
-let iteration = 1;
+let iter = 0;
 
 function calc(choice){
 	first = getArray(input1_field);
@@ -47,8 +47,8 @@ function calc(choice){
 
 	showPolynom(result, outPoly_field);
 	out_field.value = result.join("");
-	makeHistory (first, second, result, sign_div.innerHTML, iteration);
-	iteration++;
+	
+	iter = makeHistory (first, second, result, sign_div.innerHTML, iter);
 }
 
 function getArray(field){
@@ -181,36 +181,40 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 	div = document.createElement("div");
 	div.id = "history" + iter;
 	history_div.appendChild(div);
-	div.innerHTML = "History id:" + iter;
 	showPolynom(arr1, div);
+	iter++;
 
 	div = document.createElement("div");
 	div.id = "history" + iter;
 	history_div.appendChild(div);
 	div.innerHTML = sign;
-
+	iter++;
 
 	div = document.createElement("div");
 	div.id = "history" + iter;
 	history_div.appendChild(div);
-	div.innerHTML = "History id:" + iter;
 	showPolynom(arr2, div);
+	iter++;
 
 	div = document.createElement("div");
 	div.id = "history" + iter;
 	history_div.appendChild(div);
 	div.innerHTML = "=";
+	iter++;
 
 	div = document.createElement("div");
 	div.id = "history" + iter;
 	history_div.appendChild(div);
-	div.innerHTML = "History id:" + iter;
 	showPolynom(arrResult, div);
+	iter++;
 
 	div = document.createElement("div");
 	div.id = "history" + iter;
 	history_div.appendChild(div);
 	div.innerHTML = "###########################" ;
+	iter++;
+
+	return iter;
 }
 
 sum_button.addEventListener('click', function(){calc(1);});
