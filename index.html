@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
+		 <meta charset="UTF-8">
 		<title>Calculator</title>
-
+    
 	    <link rel="shortcut icon" href="favicon.ico" type="image/ico">
-		<link rel="stylesheet" href="bootstrap-grid.min.css">
+		<link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    	<script type="application/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div class="container-fluid header">
 			<div class="row " >
-				<div class="col"><h1>Калькулятор полиномов</h1></div>
+				<div class="col">
+					<h1>Калькулятор полиномов</h1>
+				</div>
 			</div>
-		</div>
+				<div class="row">
+					<div class="col"><a href="#" class="nav-link b" data-toggle="modal" data-target="#exampleModal">Инструкция</a></div>
+				</div>
+			</div>
+		
+
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-4 dimon-comp">
@@ -20,33 +29,43 @@
 						<div class="input-label col">Введите коэффициенты, начиная с 0 степени</div>
 					</div>
 					<div class="row">
-						<div class="input-label col">Например: 10011 для x^4 + x^3 + 1</div>
+						<div class="input-label col ">Например: 10011 для x^4 + x^3 + 1</div>
 					</div>
 					<div class="row">
-						<input class = "inputfield col" id="firstinput">
+						<input class = "inputfield col " id="firstinput">
 
 					</div>
 					<div class="row">
 						<input class = "inputfield col" id="secondinput">
 
 						</div>
-						<button id="swap"><></button>
-						<div class="polynoms row">
-							<div id="firstPolynom"  class="col"></div>
+						<div class="row">
+							<div class="col" id=div-swp-btn>
+						<button id="swap" class="btn btn-primary "><b>swap</b></button>
+						</div>
 						</div>
 						<div class="polynoms row">
-							<div id="sign" class="col"></div>
+							<div class="col">
+							<div id="firstPolynom" ></div>
+							</div>
 						</div>
 						<div class="polynoms row">
-							<div id="secondPolynom" class="col"></div>
+							<div class="col">
+							<div id="sign"></div>
+							</div>
+						</div>
+						<div class="polynoms row">
+							<div class="col">
+							<div id="secondPolynom" ></div>
+							</div>
 						</div>
 					<div id="buttons" class="row">
 						<div class="col">
-						<button id="clear">C</button>
-						<button id="sum">+</button>
-						<button id="mult">*</button>
-						<button id="div">/</button>
-						<button id="mod">%</button>
+						<button id="clear" class="btn btn-primary m-b-10"><b>C</b></button>
+						<button id="sum" class="btn btn-primary m-b-10"><b>+</b></button>
+						<button id="mult" class="btn btn-primary m-b-10"><b>*</b></button>
+						<button id="div" class="btn btn-primary m-b-10"><b>/</b></button>
+						<button id="mod" class="btn btn-primary m-b-10"><b>%</b></button>
 						</div>
 					</div>
 					<div class = "outputfield row">
@@ -59,7 +78,28 @@
 				<div class="col-lg-7 col-md-6 col-sm-4 history" id="history">
 				</div>
 			</div>
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="exampleModalLabel">Инструкция по использованию</h5>
+            </div>
+            <div class="modal-body ">
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis accusamus aliquid suscipit possimus laudantium, mollitia, in iste aliquam sequi facilis libero nulla nemo aut minima doloremque fuga modi minus pariatur?
+               Quisquam nobis accusamus magni hic quo maxime facilis, laudantium, eius, nulla aliquid saepe, temporibus amet odit nisi soluta! Tenetur eius ducimus consequatur, rerum nulla veritatis animi vero sunt nostrum adipisci!
+
+                </div>
+                <div class="modal-footer">
+                     <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</div>
 		</div>
+
+		
+
+<script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 		<script src = "script.js" type = "text/javascript"></script>
 	</body>
 </html>
