@@ -49,6 +49,7 @@ function calc(choice){
 	out_field.value = result.join("");
 	
 	iter = makeHistory (first, second, result, sign_div.innerHTML, iter);
+	document.getElementById(("history" + (iter -1))).scrollIntoView();
 }
 
 function getArray(field){
