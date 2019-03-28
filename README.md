@@ -5,7 +5,7 @@ Binary Polynom calculator(JS)
 Things to be done:
 - When you click polynom in history it should appear in the input field
 - History should scroll down automatically every time it refreshes
-- Make an pop-up windowed instruction opened by button
+- Make a pop-up windowed instruction opened by button
 
 # РУССКИЙ:
 # Калькулятор двоичных полиномов
