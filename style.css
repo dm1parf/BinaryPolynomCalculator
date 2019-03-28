@@ -16,10 +16,23 @@ width: 50%;
 margin-left: 10px;
 margin-right: 10px;
 margin-top: 15px;
-
 }
 
-/*Никиткины изменения конец*/
+#buttons {
+	margin-left: -30px;
+}
+
+ #div-swp-btn{
+ 	margin-left: -15px;
+ 	margin-top: 10px;
+ 	margin-bottom: 10px;
+ }
+
+ .m-b-10 {
+ 	margin-bottom: 10px;
+ }
+
+ /*Никиткины изменения конец*/
 
 .header{
 	background: white;
@@ -47,37 +60,27 @@ h1{
 	outline: 0px;
 }
 
-body{
+body {
 	background: rgb(19,36,117);
 	background: linear-gradient(90deg, rgba(19,36,117,1) 0%, rgba(52,151,182,1) 28%, rgba(54,63,190,0.9948354341736695) 100%);
+}
+
+.polynoms, #outputPolynom, .input-label {
 	color:white;
 	font-size: 30px;
 	font-family: "Arial", "sans-serif";
 }
 
-button{
-	width: 35px;
-	height: 35px;
-	font-size: 25px;
-	text-align: center;
-	border: 2px solid black;
-	border-radius: 13px;
-	background: #AED9FF;
-}
-
 button:focus{
 	outline: 0px;
-}
-.polynoms{
-	height: 35px;
 }
 
 #cycl{
 	width: 70px;
 }
-#swap{
+/*#swap{
 	width: 45px;
-}
+}*/
 .input-label{
 	font-size: 20px;
 }
