@@ -1,4 +1,4 @@
-ENGLISH:
+# ENGLISH:
 # Binary Polynom Calculator
 Binary Polynom calculator(JS)
 
@@ -7,7 +7,7 @@ Things to be done:
 - History should scroll down automatically every time it refreshes
 - Make an pop-up windowed instruction opened by button
 
-РУССКИЙ:
+# РУССКИЙ:
 # Калькулятор двоичных полиномов
 Калькулятор двоичных полиномов(JS)
 
