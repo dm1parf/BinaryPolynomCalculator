@@ -6,7 +6,6 @@ const mult_button = document.getElementById("mult");
 const div_button = document.getElementById("div");
 const mod_button = document.getElementById("mod");
 const swap_button = document.getElementById("swap");
-const cycl_button = document.getElementById("cycl");
 const poly1_field = document.getElementById("firstPolynom");
 const poly2_field = document.getElementById("secondPolynom");
 const outPoly_field = document.getElementById("outputPolynom");
@@ -79,11 +78,10 @@ function binArrayMult(arr1, arr2){
 function showPolynom(array, field){
 	field.innerHTML = "";
 	array = cutArray(array);
-	if (array.length == 1){
+	if ((array.length == 1) && (array[0] == 0)){
 		field.innerHTML += "0";
 	}
 	for (var i = array.length-1; i > 1; i--){
-		
 		if (array[i] == 1){
 			if (i != array.length-1)
 				field.innerHTML += " + ";
@@ -171,21 +169,6 @@ function clear(){
 	out_field.value = "";
 }
 
-function cycl(){
-	degree = input1_field.value;
-	poly1_field.innerHTML = "Cyclonomical polynoms of x^" + degree;
-	(result = []).length = degree - 1; //[1][2][...][degree-1] cuz [0]=[degree]
-	result.fill(0);
-	var j;
-	temp = [1];
-	var current = 1;
-	while (current % degree != 1){
-		current *= 2;
-	}
-	
-	return result;
-}
-
 function swapInputs(){
 	var temp = input1_field.value;
 	input1_field.value = input2_field.value;
@@ -235,5 +218,4 @@ mult_button.addEventListener('click', function(){calc(2);});
 div_button.addEventListener('click', function(){calc(3);});
 mod_button.addEventListener('click', function(){calc(4);});
 swap_button.addEventListener('click', swapInputs);
-cycl_button.addEventListener('click', cycl);
 clear_button.addEventListener('click', clear);
