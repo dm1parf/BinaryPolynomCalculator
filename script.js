@@ -5,17 +5,22 @@ const sum_button = document.getElementById("sum");
 const mult_button = document.getElementById("mult");
 const div_button = document.getElementById("div");
 const mod_button = document.getElementById("mod");
+const swap_button = document.getElementById("swap");
 const cycl_button = document.getElementById("cycl");
 const poly1_field = document.getElementById("firstPolynom");
 const poly2_field = document.getElementById("secondPolynom");
 const outPoly_field = document.getElementById("outputPolynom");
 const clear_button = document.getElementById("clear");
+const sign_div = document.getElementById("sign");
+const history_div = document.getElementById("history");
 
 let iteration = 1;
 
 function calc(choice){
 	first = getArray(input1_field);
 	second = getArray(input2_field);
+
+	sign_div.innerHTML = "";
 
 	showPolynom(first, poly1_field);
 	showPolynom(second, poly2_field);
@@ -25,27 +30,25 @@ function calc(choice){
 	switch (choice){
 		case 1:
 			result = binArraySum(first, second); 
-			/*
-			console.log('calculation: ' + iteration);
-			console.log(first);
-			console.log('+');
-			console.log(second);
-			console.log(result);
-			*/
+			sign_div.innerHTML = "+";
 			break;
 		case 2:
 			result = binArrayMult(first, second); 
+			sign_div.innerHTML = "*";
 			break;
 		case 3:
 			result = binArrayDiv(first, second,1);
+			sign_div.innerHTML = "/";
 			break;
 		case 4:
 			result = binArrayDiv(first, second,2);
+			sign_div.innerHTML = "%";
 			break;
 	}
 
 	showPolynom(result, outPoly_field);
 	out_field.value = result.join("");
+	makeHistory (first, second, result, sign_div.innerHTML, iteration);
 	iteration++;
 }
 
@@ -75,17 +78,23 @@ function binArrayMult(arr1, arr2){
 
 function showPolynom(array, field){
 	field.innerHTML = "";
-	console.log(array.length);
+	array = cutArray(array);
 	if (array.length == 1){
 		field.innerHTML += "0";
 	}
-	for (var i = array.length-1; i > 0; i--){
+	for (var i = array.length-1; i > 1; i--){
 		
 		if (array[i] == 1){
 			if (i != array.length-1)
 				field.innerHTML += " + ";
 			field.innerHTML += "x^" + i;
 		}
+	}
+	if (array[1] == 1){
+		if (array.length > 2){
+			field.innerHTML += " + ";
+		}
+		field.innerHTML += "x";
 	}
 	if (array[0] == 1){
 		if (array.length > 1){
@@ -171,16 +180,60 @@ function cycl(){
 	temp = [1];
 	var current = 1;
 	while (current % degree != 1){
-		console.log(current);
 		current *= 2;
 	}
 	
 	return result;
 }
 
+function swapInputs(){
+	var temp = input1_field.value;
+	input1_field.value = input2_field.value;
+	input2_field.value = temp;
+}
+
+function makeHistory(arr1, arr2, arrResult, sign, iter){
+	var div;
+
+	div = document.createElement("div");
+	div.id = "history" + iter;
+	history_div.appendChild(div);
+	div.innerHTML = "History id:" + iter;
+	showPolynom(arr1, div);
+
+	div = document.createElement("div");
+	div.id = "history" + iter;
+	history_div.appendChild(div);
+	div.innerHTML = sign;
+
+
+	div = document.createElement("div");
+	div.id = "history" + iter;
+	history_div.appendChild(div);
+	div.innerHTML = "History id:" + iter;
+	showPolynom(arr2, div);
+
+	div = document.createElement("div");
+	div.id = "history" + iter;
+	history_div.appendChild(div);
+	div.innerHTML = "=";
+
+	div = document.createElement("div");
+	div.id = "history" + iter;
+	history_div.appendChild(div);
+	div.innerHTML = "History id:" + iter;
+	showPolynom(arrResult, div);
+
+	div = document.createElement("div");
+	div.id = "history" + iter;
+	history_div.appendChild(div);
+	div.innerHTML = "###########################" ;
+}
+
 sum_button.addEventListener('click', function(){calc(1);});
 mult_button.addEventListener('click', function(){calc(2);});
 div_button.addEventListener('click', function(){calc(3);});
 mod_button.addEventListener('click', function(){calc(4);});
+swap_button.addEventListener('click', swapInputs);
 cycl_button.addEventListener('click', cycl);
 clear_button.addEventListener('click', clear);

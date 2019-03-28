@@ -1,38 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 	<head>
 		<title>Calculator</title>
+
+	    <link rel="shortcut icon" href="favicon.ico" type="image/ico">
+		<link rel="stylesheet" href="bootstrap-grid.min.css">
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<header>
-			<h1>Калькулятор полиномов</h1>
-		</header>
-		<div >
-			<div class="input-label">Введите коэффициенты, начиная с 0 степени</div>
-			<div class="input-label">Например: 10011 для x^4 + x^3 + 1</div>
-			<input class = "inputfield" id="firstinput">
-			<input class = "inputfield" id="secondinput">
-			
-			<div class="polynoms">
-				<div id="firstPolynom"></div>
-				<div id="secondPolynom"></div>
+		<div class="container-fluid header">
+			<div class="row " >
+				<div class="col"><h1>Калькулятор полиномов</h1></div>
 			</div>
 		</div>
-		<div id="buttons">
-			<button id="clear">C</button>
-			<button id="sum">+</button>
-			<button id="mult">*</button>
-			<button id="div">/</button>
-			<button id="mod">%</button>
-			<button id="cycl">cycl</button>
-			
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-4 dimon-comp">
+					<div class="row">
+						<div class="input-label col">Введите коэффициенты, начиная с 0 степени</div>
+					</div>
+					<div class="row">
+						<div class="input-label col">Например: 10011 для x^4 + x^3 + 1</div>
+					</div>
+					<div class="row">
+						<input class = "inputfield col" id="firstinput">
+
+					</div>
+					<div class="row">
+						<input class = "inputfield col" id="secondinput">
+
+						</div>
+						<button id="swap"><></button>
+						<div class="polynoms row">
+							<div id="firstPolynom"  class="col"></div>
+						</div>
+						<div class="polynoms row">
+							<div id="sign" class="col"></div>
+						</div>
+						<div class="polynoms row">
+							<div id="secondPolynom" class="col"></div>
+						</div>
+					<div id="buttons" class="row">
+						<div class="col">
+						<button id="clear">C</button>
+						<button id="sum">+</button>
+						<button id="mult">*</button>
+						<button id="div">/</button>
+						<button id="mod">%</button>
+						<button id="cycl">cycl</button>
+						</div>
+					</div>
+					<div class = "outputfield row">
+						<input class = "inputfield col" id="output">
+					</div>
+					<div class="row">
+						<div id="outputPolynom" class="col"></div>
+					</div>
+				</div>
+				<div class="col-lg-7 col-md-6 col-sm-4 history" id="history">
+				</div>
+			</div>
 		</div>
-		<div class = "outputfield">
-			<input class = "inputfield" id="output">
-			<div id="outputPolynom"></div>
-		</div>
-		
 		<script src = "script.js" type = "text/javascript"></script>
 	</body>
 </html>
