@@ -12,16 +12,28 @@ const history_div = document.getElementById("history");
 
 let iter = 0;
 let sign;
-let input1_clicked = 0;
-let input2_clicked = 0;
+
 
 input1_field.focus();
 
 function calc(choice){
 	first = getArray(input1_field);
 	second = getArray(input2_field);
-
-	if (first.length && second.length){
+	let inputError = 0;
+	for(var i = 0; i < first.length; i++){
+		if (first[i] > 1 || first[i] < 0){
+			inputError = 1;
+		}
+	}
+	for(var i = 0; i < second.length; i++){
+		if (second[i] > 1 || second[i] < 0){
+			inputError = 1;
+		}
+	}
+	if (inputError){
+		alert('Ошибка ввода! Убедитесь, что вы ввели только коэффициенты 0 и 1');
+	}
+	if ((first.length) && (second.length) && inputError == 0){
 		result = [];
 
 		switch (choice){
@@ -179,7 +191,10 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 	
 	history_div.appendChild(div);
 	showPolynom(arr1, div);
-	div.addEventListener('click', function(){input1_field.value = arr1.join("")});
+	div.addEventListener('click', function(){input1_field.value = arr1.join("");
+											input1_field.style.background = '#7ccdff';
+											setTimeout(function(){input1_field.style.background = 'white';}, 500)
+											});
 	div.style.cursor = 'pointer';
 	iter++;
 
@@ -194,7 +209,10 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 
 	history_div.appendChild(div);
 	showPolynom(arr2, div);
-	div.addEventListener('click', function(){input1_field.value = arr2.join("")});
+	div.addEventListener('click', function(){input1_field.value = arr2.join("");
+											input1_field.style.background = '#7ccdff';
+											setTimeout(function(){input1_field.style.background = 'white';}, 500)
+											});
 	div.style.cursor = 'pointer';
 	iter++;
 
@@ -209,7 +227,10 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 
 	history_div.appendChild(div);
 	showPolynom(arrResult, div);
-	div.addEventListener('click', function(){input1_field.value = arrResult.join("")});
+	div.addEventListener('click', function(){input1_field.value = arrResult.join("");
+											input1_field.style.background = '#7ccdff';
+											setTimeout(function(){input1_field.style.background = 'white';}, 500)
+											});
 	div.style.cursor = 'pointer';
 	iter++;
 	
