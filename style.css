@@ -76,6 +76,7 @@ body {
 #firstpolynom{
 	padding: 1000px 0px 0px 0px;
 }
+
 button:focus{
 	outline: 0px;
 }
@@ -98,18 +99,3 @@ hr{
 #cf img{
 	border-radius: 5px;
 }
-/*#cf {
-  margin:0 auto;
-}
-
-#cf img {
-
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-}
-
-#cf img.top:hover {
-  opacity:0;
-}*/

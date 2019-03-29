@@ -6,18 +6,16 @@ const mult_button = document.getElementById("mult");
 const div_button = document.getElementById("div");
 const mod_button = document.getElementById("mod");
 const swap_button = document.getElementById("swap");
-//const poly1_field = document.getElementById("firstPolynom");
-//const poly2_field = document.getElementById("secondPolynom");
-//const outPoly_field = document.getElementById("outputPolynom");
 const clear_button = document.getElementById("clear");
 const clearHistory_button = document.getElementById("clear-history");
-//const sign_div = document.getElementById("sign");
 const history_div = document.getElementById("history");
 
 let iter = 0;
 let sign;
 let input1_clicked = 0;
 let input2_clicked = 0;
+
+input1_field.focus();
 
 function calc(choice){
 	first = getArray(input1_field);
@@ -182,6 +180,7 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 	history_div.appendChild(div);
 	showPolynom(arr1, div);
 	div.addEventListener('click', function(){input1_field.value = arr1.join("")});
+	div.style.cursor = 'pointer';
 	iter++;
 
 	div = document.createElement("div");
@@ -196,6 +195,7 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 	history_div.appendChild(div);
 	showPolynom(arr2, div);
 	div.addEventListener('click', function(){input1_field.value = arr2.join("")});
+	div.style.cursor = 'pointer';
 	iter++;
 
 	div = document.createElement("div");
@@ -210,6 +210,7 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 	history_div.appendChild(div);
 	showPolynom(arrResult, div);
 	div.addEventListener('click', function(){input1_field.value = arrResult.join("")});
+	div.style.cursor = 'pointer';
 	iter++;
 	
 	div = document.createElement("div");
@@ -235,5 +236,3 @@ mod_button.addEventListener('click', function(){calc(4);});
 swap_button.addEventListener('click', swapInputs);
 clear_button.addEventListener('click', clear);
 clearHistory_button.addEventListener('click', clearHistory);
-input1_field.addEventListener('click', function(){if(input1_clicked ==0){input1_field.value=""; input1_clicked++}});
-input2_field.addEventListener('click', function(){if(input2_clicked ==0){input2_field.value=""; input2_clicked++}});
