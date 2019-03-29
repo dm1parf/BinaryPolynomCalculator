@@ -95,7 +95,18 @@ hr{
 	border-width: 2px;
 	border-color: black;
 }
-#cf img{
+.cf-1{
+	background: url(inst.PNG) no-repeat;
+	border-radius: 5px;
+	background-size: cover; 
+}
+.cf-2 {
+	background: url(inst2.PNG) no-repeat;
+	border-radius: 5px;
+	background-size: cover; 
+}
+
+/*#cf img{
 	border-radius: 5px;
 }
 /*#cf {

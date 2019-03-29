@@ -69,9 +69,8 @@
             			В истории вычислений многочлен можно переместить в первое поле для ввода по нажатию на него
             		</li>
             	</ul>
-            			<div id="cf">
-            					<img class="img-fluid" src="inst2.png">
-            					<!--<img class="img-fluid" src="inst2.png">-->
+            			<div id="cf" class="contanier-fluid cf-1">
+            				<br><br><br><br><br><br><br>
             			</div>
             			
             	<ul>
@@ -98,5 +97,20 @@
 
 <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 		<script src = "script.js" type = "text/javascript"></script>
+		<script>
+			var n=1;
+			$("#cf").click(function()
+			{
+				if (n%2 === 1){
+				$("#cf").removeClass('cf-1');
+				$("#cf").addClass('cf-2');
+				n+=1;}
+				else {
+						$("#cf").removeClass('cf-2');
+				$("#cf").addClass('cf-1');
+				n+=1;
+				}
+			})
+		</script>
 	</body>
 </html>
