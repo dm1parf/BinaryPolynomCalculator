@@ -1,25 +1,26 @@
-/*Никиткины изменения старт*/
 .history
 {
-    overflow: scroll;
+    overflow-y: scroll;
     width: 50%;
-    height: 500px;
+    height: 200px;
 	margin: 15px 6%;
 	margin-right: 0px;	
     color: black;
     background-color: white;
 	opacity: 0.8;
-	border-radius: 7px;
+	border-radius: 7px 0px 0px 7px;
+	font-size: 20px;
 }
 .dimon-comp {
-width: 50%;
-margin-left: 10px;
-margin-right: 10px;
-margin-top: 15px;
+	width: 50%;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 15px;
 }
 
 #buttons {
 	margin-left: -30px;
+
 }
 
  #div-swp-btn{
@@ -28,22 +29,23 @@ margin-top: 15px;
  	margin-bottom: 10px;
  }
 
- .m-b-10 {
- 	margin-bottom: 10px;
+ .m-b-10{
+ 	 	width: 40px;
  }
 
- /*Никиткины изменения конец*/
+ .buttonBorder {
+ 	margin-bottom: 10px;
+ 	border: 1px solid #7fcaf9;
+ }
 
 .header{
 	background: white;
-	
 	text-align: center;
 	font-size: 20px;
 	opacity: 0.8;
-	border-radius: 15px;
-	
 	margin: 0 auto;
 }
+
 h1{
 	
 	color: black;
@@ -71,6 +73,9 @@ body {
 	font-family: "Arial", "sans-serif";
 }
 
+#firstpolynom{
+	padding: 1000px 0px 0px 0px;
+}
 button:focus{
 	outline: 0px;
 }
@@ -78,23 +83,33 @@ button:focus{
 #cycl{
 	width: 70px;
 }
-/*#swap{
-	width: 45px;
-}*/
+
 .input-label{
 	font-size: 20px;
 }
 #sign{
 	padding:0px;
 }
-/*
-#outputPolynom{
-	padding: 0px;
+
+hr{
+	border-width: 2px;
+	border-color: black;
 }
-#secondinput{
-	margin: 0px;
+#cf img{
+	border-radius: 5px;
 }
-#output{
-	margin: 0px;
+/*#cf {
+  margin:0 auto;
 }
-*/
+
+#cf img {
+
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#cf img.top:hover {
+  opacity:0;
+}*/
