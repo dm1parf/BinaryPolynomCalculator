@@ -16,6 +16,8 @@ const history_div = document.getElementById("history");
 
 let iter = 0;
 let sign;
+let input1_clicked = 0;
+let input2_clicked = 0;
 
 function calc(choice){
 	first = getArray(input1_field);
@@ -83,7 +85,7 @@ function showPolynom(array, field){
 		if (array[i] == 1){
 			if (i != array.length-1)
 				field.innerHTML += " + ";
-			field.innerHTML += "x^" + i;
+			field.innerHTML += "x<sup>" + i + "</sup>";
 		}
 	}
 	if (array[1] == 1){
@@ -159,10 +161,6 @@ function cutArray(arr){
 }
 
 function clear(){
-	poly1_field.innerHTML = " ";
-	poly2_field.innerHTML = " ";
-	sign_div.innerHTML = " ";
-	outPoly_field.innerHTML = " ";
 	input1_field.value = "";
 	input2_field.value = "";
 	out_field.value = "";
@@ -213,13 +211,13 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 	showPolynom(arrResult, div);
 	div.addEventListener('click', function(){input1_field.value = arrResult.join("")});
 	iter++;
-
+	
 	div = document.createElement("div");
 	div.id = "history" + iter;
 	history_div.appendChild(div);
-	div.innerHTML = "###########################" ;
+	div.innerHTML = "<hr>" ;
 	iter++;
-
+	
 	return iter;
 }
 
@@ -237,3 +235,5 @@ mod_button.addEventListener('click', function(){calc(4);});
 swap_button.addEventListener('click', swapInputs);
 clear_button.addEventListener('click', clear);
 clearHistory_button.addEventListener('click', clearHistory);
+input1_field.addEventListener('click', function(){if(input1_clicked ==0){input1_field.value=""; input1_clicked++}});
+input2_field.addEventListener('click', function(){if(input2_clicked ==0){input2_field.value=""; input2_clicked++}});

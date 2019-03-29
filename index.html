@@ -26,27 +26,27 @@
 			<div class="row">
 				<div class="col-4 dimon-comp">
 					<div class="row">
-						<input class = "inputfield col " id="firstinput">
+						<input class = "inputfield col " id="firstinput" value="First polynom">
 					</div>
 					<div class="row">
-						<input class = "inputfield col" id="secondinput">
+						<input class = "inputfield col" id="secondinput" value="Second polynom">
 						</div>
 						<div class="row">
 							<div class="col" id=div-swp-btn>
-						<button id="swap" class="btn btn-primary buttonBorder"><b>swap</b></button>
+						<button id="swap" class="btn btn-primary buttonBorder"><b>Swap polynoms</b></button>
 						</div>
 						</div>						
 					<div id="buttons" class="row">
 						<div class="col">
 						<button id="clear" class="btn btn-primary m-b-10 buttonBorder"><b>C</b></button>
 						<button id="sum" class="btn btn-primary m-b-10 buttonBorder"><b>+</b></button>
-						<button id="mult" class="btn btn-primary m-b-10 buttonBorder"><b>*</b></button>
+						<button id="mult" class="btn btn-primary m-b-10 buttonBorder"><b>×</b></button>
 						<button id="div" class="btn btn-primary m-b-10 buttonBorder"><b>/</b></button>
 						<button id="mod" class="btn btn-primary m-b-10 buttonBorder"><b>%</b></button>
 						</div>
 					</div>
 					<div class = "outputfield row">
-						<input class = "inputfield col" id="output">
+						<input class = "inputfield col" id="output" value="Result polynom" disabled>
 					</div>
 					
 				</div>
@@ -69,9 +69,13 @@
             			В истории вычислений многочлен можно переместить в первое поле для ввода по нажатию на него
             		</li>
             	</ul>
-            			<img src="inst.png">
+            			<div id="cf">
+            					<img class="bottom" src="inst2.png">
+            					<img class="top" src="inst.png">
+            			</div>
+            			
             	<ul>
-            		<li>
+            		<li style="padding-top: 8px;">
             			Замечания по работе калькулятора отправляйте на почту автора <a href="mailto:dm1parf@gmail.com">dm1parf@gmail.com</a>
             		</li>
             		
@@ -88,7 +92,7 @@
 </div>
 <div class="row">
 	<div class="col"></div>
-	<div class="col" style="text-align: left; margin: -2% 0px 0px -20%"><button id="clear-history"class="btn btn-primary  buttonBorder">Clear</button></div>
+	<div class="col" style="text-align: left; margin: -2% 0px 0px -20%"><button id="clear-history"class="btn btn-primary  buttonBorder"><b>Clear history</b></button></div>
 </div>
 		</div>
 
