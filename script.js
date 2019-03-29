@@ -54,6 +54,8 @@ function calc(choice){
 			sign = "%";
 			break;
 	}
+	out_field.style.background = '#7ccdff';
+	setTimeout(function(){out_field.style.background = 'white';}, 500)
 	out_field.value = result.join("");
 	
 	iter = makeHistory (first, second, result, sign, iter);

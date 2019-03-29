@@ -118,3 +118,8 @@ hr{
 	text-align: left; 
 	margin: 0px 0px 0px -22%;
 }
+
+#output{
+	transition-duration: 0.8s;
+	transition-timing-function: ease-out;
+}
