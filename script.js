@@ -6,50 +6,47 @@ const mult_button = document.getElementById("mult");
 const div_button = document.getElementById("div");
 const mod_button = document.getElementById("mod");
 const swap_button = document.getElementById("swap");
-const poly1_field = document.getElementById("firstPolynom");
-const poly2_field = document.getElementById("secondPolynom");
-const outPoly_field = document.getElementById("outputPolynom");
+//const poly1_field = document.getElementById("firstPolynom");
+//const poly2_field = document.getElementById("secondPolynom");
+//const outPoly_field = document.getElementById("outputPolynom");
 const clear_button = document.getElementById("clear");
-const sign_div = document.getElementById("sign");
+const clearHistory_button = document.getElementById("clear-history");
+//const sign_div = document.getElementById("sign");
 const history_div = document.getElementById("history");
 
 let iter = 0;
+let sign;
 
 function calc(choice){
 	first = getArray(input1_field);
 	second = getArray(input2_field);
 
-	sign_div.innerHTML = "";
+	if (first.length && second.length){
+		result = [];
 
-	showPolynom(first, poly1_field);
-	showPolynom(second, poly2_field);
-
-	result = [];
-
-	switch (choice){
+		switch (choice){
 		case 1:
 			result = binArraySum(first, second); 
-			sign_div.innerHTML = "+";
+			sign = "+";
 			break;
 		case 2:
 			result = binArrayMult(first, second); 
-			sign_div.innerHTML = "*";
+			sign = "*";
 			break;
 		case 3:
 			result = binArrayDiv(first, second,1);
-			sign_div.innerHTML = "/";
+			sign = "/";
 			break;
 		case 4:
 			result = binArrayDiv(first, second,2);
-			sign_div.innerHTML = "%";
+			sign = "%";
 			break;
 	}
-
-	showPolynom(result, outPoly_field);
 	out_field.value = result.join("");
 	
-	iter = makeHistory (first, second, result, sign_div.innerHTML, iter);
+	iter = makeHistory (first, second, result, sign, iter);
 	document.getElementById(("history" + (iter -1))).scrollIntoView({behavior: "smooth"});
+	}	
 }
 
 function getArray(field){
@@ -226,9 +223,17 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 	return iter;
 }
 
+function clearHistory(){
+	var element = history_div;
+	while(element.firstChild){
+		element.removeChild(element.firstChild);
+	}
+}
+
 sum_button.addEventListener('click', function(){calc(1);});
 mult_button.addEventListener('click', function(){calc(2);});
 div_button.addEventListener('click', function(){calc(3);});
 mod_button.addEventListener('click', function(){calc(4);});
 swap_button.addEventListener('click', swapInputs);
 clear_button.addEventListener('click', clear);
+clearHistory_button.addEventListener('click', clearHistory);

@@ -1,9 +1,8 @@
-/*Никиткины изменения старт*/
 .history
 {
     overflow: scroll;
     width: 50%;
-    height: 500px;
+    height: 200px;
 	margin: 15px 6%;
 	margin-right: 0px;	
     color: black;
@@ -12,14 +11,15 @@
 	border-radius: 7px;
 }
 .dimon-comp {
-width: 50%;
-margin-left: 10px;
-margin-right: 10px;
-margin-top: 15px;
+	width: 50%;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 15px;
 }
 
 #buttons {
 	margin-left: -30px;
+
 }
 
  #div-swp-btn{
@@ -28,21 +28,19 @@ margin-top: 15px;
  	margin-bottom: 10px;
  }
 
- .m-b-10 {
+ .buttonBorder {
  	margin-bottom: 10px;
+ 	border: 1px solid #7fcaf9;
  }
-
- /*Никиткины изменения конец*/
 
 .header{
 	background: white;
-	
 	text-align: center;
 	font-size: 20px;
 	opacity: 0.8;
-	
 	margin: 0 auto;
 }
+
 h1{
 	
 	color: black;
@@ -80,22 +78,10 @@ button:focus{
 #cycl{
 	width: 70px;
 }
-/*#swap{
-	width: 45px;
-}*/
+
 .input-label{
 	font-size: 20px;
 }
 #sign{
 	padding:0px;
 }
-
-/*
-#outputPolynom{
-	padding: 0px;
-}
-
-#output{
-	margin: 0px;
-}
-*/
