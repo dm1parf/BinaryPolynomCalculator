@@ -95,20 +95,15 @@ hr{
 	border-width: 2px;
 	border-color: black;
 }
-
-#cf {
-  position:relative;
-  width:450px;
-  height: 170px;
+#cf img{
+	border-radius: 5px;
+}
+/*#cf {
   margin:0 auto;
 }
 
 #cf img {
-	width: 450px;
-	height: 170px;
-  position:absolute;
-  border-radius: 7px;
-  left:0;
+
   -webkit-transition: opacity 0.3s ease-in-out;
   -moz-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
@@ -117,4 +112,4 @@ hr{
 
 #cf img.top:hover {
   opacity:0;
-}
+}*/
