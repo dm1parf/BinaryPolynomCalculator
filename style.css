@@ -85,3 +85,8 @@ button:focus{
 #sign{
 	padding:0px;
 }
+
+img{
+	height: 60%;
+	width: 100%;
+}
