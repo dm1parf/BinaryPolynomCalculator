@@ -182,9 +182,11 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 	var div;
 
 	div = document.createElement("div");
-	div.id = "history" + iter;
+	div.id = "history" + iter + "-" + arr1.join("");
+	
 	history_div.appendChild(div);
 	showPolynom(arr1, div);
+	div.addEventListener('click', function(){input1_field.value = arr1.join("")});
 	iter++;
 
 	div = document.createElement("div");
@@ -194,9 +196,11 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 	iter++;
 
 	div = document.createElement("div");
-	div.id = "history" + iter;
+	div.id = "history" + iter + "-" + arr2.join("");
+
 	history_div.appendChild(div);
 	showPolynom(arr2, div);
+	div.addEventListener('click', function(){input1_field.value = arr2.join("")});
 	iter++;
 
 	div = document.createElement("div");
@@ -206,9 +210,11 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 	iter++;
 
 	div = document.createElement("div");
-	div.id = "history" + iter;
+	div.id = "history" + iter + "-" + arrResult.join("");
+
 	history_div.appendChild(div);
 	showPolynom(arrResult, div);
+	div.addEventListener('click', function(){input1_field.value = arrResult.join("")});
 	iter++;
 
 	div = document.createElement("div");
