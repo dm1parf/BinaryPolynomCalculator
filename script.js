@@ -37,19 +37,19 @@ function calc(choice){
 		result = [];
 
 		switch (choice){
-		case 1:
+		case 'sum':
 			result = binArraySum(first, second);
 			sign = "+";
 			break;
-		case 2:
+		case 'mult':
 			result = binArrayMult(first, second);
 			sign = "*";
 			break;
-		case 3:
+		case 'div':
 			result = binArrayDiv(first, second,1);
 			sign = "/";
 			break;
-		case 4:
+		case 'mod':
 			result = binArrayDiv(first, second,2);
 			sign = "%";
 			break;
@@ -193,10 +193,7 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 
 	history_div.appendChild(div);
 	showPolynom(arr1, div);
-	div.addEventListener('click', function(){input1_field.value = arr1.join("");
-											input1_field.style.background = '#7ccdff';
-											setTimeout(function(){input1_field.style.background = 'white';}, 500)
-											});
+	$(div).click(function(){moveToInput(arr1)});
 	div.style.cursor = 'pointer';
 	iter++;
 
@@ -211,10 +208,7 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 
 	history_div.appendChild(div);
 	showPolynom(arr2, div);
-	div.addEventListener('click', function(){input1_field.value = arr2.join("");
-											input1_field.style.background = '#7ccdff';
-											setTimeout(function(){input1_field.style.background = 'white';}, 500)
-											});
+	$(div).click(function(){moveToInput(arr2)});
 	div.style.cursor = 'pointer';
 	iter++;
 
@@ -229,10 +223,7 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 
 	history_div.appendChild(div);
 	showPolynom(arrResult, div);
-	div.addEventListener('click', function(){input1_field.value = arrResult.join("");
-											input1_field.style.background = '#7ccdff';
-											setTimeout(function(){input1_field.style.background = 'white';}, 500)
-											});
+	$(div).click(function(){moveToInput(arrResult)});
 	div.style.cursor = 'pointer';
 	iter++;
 
@@ -243,6 +234,12 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 	iter++;
 
 	return iter;
+}
+
+function moveToInput(array){
+	input1_field.value = array.join("");
+	input1_field.style.background = '#7ccdff';
+	setTimeout(function(){input1_field.style.background = 'white';}, 500)
 }
 
 function clearHistory(){
@@ -263,17 +260,23 @@ function test(){
 	if (out_field.value == "1011111")
 	console.log("Mult works!");
 
+	calc(3);
+	if (out_field.value == "111")
+	console.log("Div works!");
+
+	calc(4);
+	if (out_field.value == "01")
+	console.log("Mod works!");
+
 	clearHistory();
 	clear();
 }
 
 
-
-
-sum_button.addEventListener('click', function(){calc(1);});
-mult_button.addEventListener('click', function(){calc(2);});
-div_button.addEventListener('click', function(){calc(3);});
-mod_button.addEventListener('click', function(){calc(4);});
-swap_button.addEventListener('click', swapInputs);
-clear_button.addEventListener('click', clear);
-clearHistory_button.addEventListener('click', clearHistory);
+$(sum_button).click(function(){calc('sum');});
+$(mult_button).click(function(){calc('mult');});
+$(div_button).click(function(){calc('div');});
+$(mod_button).click(function(){calc('mod');});
+$(swap_button).click(swapInputs);
+$(clearHistory_button).click(clearHistory);
+$(clear_button).click(clear);
