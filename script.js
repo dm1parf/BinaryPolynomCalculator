@@ -38,11 +38,11 @@ function calc(choice){
 
 		switch (choice){
 		case 1:
-			result = binArraySum(first, second); 
+			result = binArraySum(first, second);
 			sign = "+";
 			break;
 		case 2:
-			result = binArrayMult(first, second); 
+			result = binArrayMult(first, second);
 			sign = "*";
 			break;
 		case 3:
@@ -57,10 +57,10 @@ function calc(choice){
 	out_field.style.background = '#7ccdff';
 	setTimeout(function(){out_field.style.background = 'white';}, 500)
 	out_field.value = result.join("");
-	
+
 	iter = makeHistory (first, second, result, sign, iter);
 	document.getElementById(("history" + (iter -1))).scrollIntoView({behavior: "smooth"});
-	}	
+	}
 }
 
 function getArray(field){
@@ -74,12 +74,12 @@ function getArray(field){
 function binArrayMult(arr1, arr2){
 	(mult = []).length = arr1.length + arr2.length - 1;
 	mult.fill(0);
-	
+
 	for (var i = 0; i < arr1.length; i++){
 		for (var j = 0; j < arr2.length; j++){
 			if (arr1[i] == 1 && arr2[j]== 1){
 				mult[i+j] = (mult[i+j] + 1) % 2;
-				
+
 			}
 		}
 	}
@@ -112,7 +112,7 @@ function showPolynom(array, field){
 		}
 		field.innerHTML += "1";
 	}
-	
+
 }
 
 function binArraySum(arr1, arr2){
@@ -161,14 +161,14 @@ function createSinglePolynom(degree){
 	(newPolynom = []).length = degree + 1;
 	newPolynom.fill(0);
 	newPolynom[degree] = 1;
-	return newPolynom; 
+	return newPolynom;
 }
 
 function cutArray(arr){
 	while (arr[arr.length-1] == 0 && (arr.length > 1)){
 		arr.pop();
 	}
-		
+
 	return arr;
 }
 
@@ -190,7 +190,7 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 
 	div = document.createElement("div");
 	div.id = "history" + iter + "-" + arr1.join("");
-	
+
 	history_div.appendChild(div);
 	showPolynom(arr1, div);
 	div.addEventListener('click', function(){input1_field.value = arr1.join("");
@@ -235,13 +235,13 @@ function makeHistory(arr1, arr2, arrResult, sign, iter){
 											});
 	div.style.cursor = 'pointer';
 	iter++;
-	
+
 	div = document.createElement("div");
 	div.id = "history" + iter;
 	history_div.appendChild(div);
 	div.innerHTML = "<hr>" ;
 	iter++;
-	
+
 	return iter;
 }
 
@@ -251,6 +251,24 @@ function clearHistory(){
 		element.removeChild(element.firstChild);
 	}
 }
+
+function test(){
+	input1_field.value = "10011";
+	input2_field.value = "101"
+	calc(1);
+	if (out_field.value == "00111")
+	console.log("Sum works!");
+
+	calc(2);
+	if (out_field.value == "1011111")
+	console.log("Mult works!");
+
+	clearHistory();
+	clear();
+}
+
+
+
 
 sum_button.addEventListener('click', function(){calc(1);});
 mult_button.addEventListener('click', function(){calc(2);});
