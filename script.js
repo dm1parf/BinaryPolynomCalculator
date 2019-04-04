@@ -8,7 +8,7 @@ $("#mult").click(function(){calc('mult');});
 $("#div").click(function(){calc('div');});
 $("#mod").click(function(){calc('mod');});
 $("#swap").click(swapInputs);
-$("#clear-history").click(clearHistory);
+$("#clear-history").click(function(){$('#history').children().remove()});
 $("#clear").click(clear);
 
 let sign;
@@ -175,10 +175,7 @@ function cutArray(arr){
 }
 
 function clear(){
-	input1_field.value = "";
-	input2_field.value = "";
-	out_field.value = "";
-
+	$('.clear').val('');
 }
 
 function swapInputs(){
@@ -190,22 +187,22 @@ function swapInputs(){
 function makeHistory(arr1, arr2, arrResult, sign, iter){
 	let div;
 	putPolynomDiv(arr1);
-
-	div = document.createElement("div");
-	history_div.appendChild(div);
-	div.innerHTML = sign;
-
+	putCosmetics(sign);
 	putPolynomDiv(arr2);
-	div = document.createElement("div");
-	history_div.appendChild(div);
-	div.innerHTML = "=";
+	putCosmetics('=');
 
 	putPolynomDiv(arrResult);
+	div = putCosmetics('<hr>');
+	div.id = 'history' + iter;
+}
 
+function putCosmetics(thing){
 	div = document.createElement("div");
-	div.id = "history" + iter;
 	history_div.appendChild(div);
-	div.innerHTML = "<hr>" ;
+	div.innerHTML = thing;
+	if (thing == '<hr>')
+
+	return div;
 }
 
 function putPolynomDiv(array){
@@ -225,15 +222,8 @@ function moveToInput(array){
 	setTimeout(function(){input1_field.style.background = 'white';}, 500)
 }
 
-function clearHistory(){
-	let element = history_div;
-	while(element.firstChild){
-		element.removeChild(element.firstChild);
-	}
-}
-
 function test(){
-	input1_field.value = "10011";
+	$('#firstinput').val("10011");
 	input2_field.value = "101"
 	calc('sum');
 	if (out_field.value == "00111")
