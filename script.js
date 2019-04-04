@@ -179,9 +179,9 @@ function clear(){
 }
 
 function swapInputs(){
-	let temp = input1_field.value;
-	input1_field.value = input2_field.value;
-	input2_field.value = temp;
+	let temp = $('#firstinput').val();
+	$('#firstinput').val($('#secondinput').val());
+	$('#secondinput').val(temp);
 }
 
 function makeHistory(arr1, arr2, arrResult, sign, iter){
@@ -222,6 +222,7 @@ function moveToInput(array){
 	setTimeout(function(){input1_field.style.background = 'white';}, 500)
 }
 
+
 function test(){
 	$('#firstinput').val("10011");
 	input2_field.value = "101"
@@ -238,9 +239,9 @@ function test(){
 	console.log("Div works!");
 
 	calc('mod');
-	if (out_field.value == "01")
+	if ($("#output").val() == "01")
 	console.log("Mod works!");
 
-	clearHistory();
-	clear();
+	//clearHistory();
+	//clear();
 }
