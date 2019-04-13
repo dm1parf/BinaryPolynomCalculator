@@ -12,6 +12,7 @@ $("#clear-history").click(function(){$('#history').children().remove()});
 $("#clear").click(clear);
 
 let sign;
+
 let iter = 0;
 
 input1_field.focus();
